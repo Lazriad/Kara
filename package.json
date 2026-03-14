@@ -7,7 +7,13 @@
     "start": "node backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node backend/server.js",
-    "client": "cd frontend && npm start"
+    "client": "cd frontend && npm start",
+    "preview": "npm run check-deps && concurrently \"npm run server\" \"npm run client\"",
+    "install:all": "npm install && cd frontend && npm install",
+    "setup": "npm run install:all && echo '\\n✅ Setup complete! Run \"npm run preview\" to start the development servers.'",
+    "check-deps": "node -e \"console.log('🔍 Checking dependencies...')\" && [ -d \"node_modules\" ] && [ -d \"frontend/node_modules\" ] && echo '✅ Dependencies installed' || (echo '❌ Dependencies missing. Run: npm run setup' && exit 1)",
+    "status": "echo '🔍 Checking Kara development environment...' && npm run check-deps && echo '✅ Ready to preview! Run: npm run preview'"
+  },
   },
   "repository": {
     "type": "git",
@@ -25,10 +31,10 @@
     "axios": "^1.13.6",
     "concurrently": "^8.2.2",
     "cors": "^2.8.6",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.6.1",
     "express": "^5.2.1",
     "express-session": "^1.18.0",
-    "sqlite3": "^5.1.6",
+    "sqlite3": "^5.1.7",
     "stripe": "^14.21.0",
     "ws": "^8.16.0"
   }

@@ -8,10 +8,10 @@ const match = require('./match');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // Add platform configs
-const SOUNDCLOUD_CLIENT_ID = process.env.SOUNDCLOUD_CLIENT_ID;
-const SOUNDCLOUD_CLIENT_SECRET = process.env.SOUNDCLOUD_CLIENT_SECRET;
-const APPLE_MUSIC_TOKEN = process.env.APPLE_MUSIC_TOKEN;
-const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
+const SOUNDCLOUD_CLIENT_ID = process.env.SOUNDCLOUD_CLIENT_ID || '';
+const SOUNDCLOUD_CLIENT_SECRET = process.env.SOUNDCLOUD_CLIENT_SECRET || '';
+const APPLE_MUSIC_TOKEN = process.env.APPLE_MUSIC_TOKEN || '';
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || '';
 
 const app = express();
 const PORT = 5000;
@@ -131,6 +131,24 @@ app.get('/top-artists', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send('Error fetching top artists');
+  }
+});
+
+app.get('/me', async (req, res) => {
+  const userId = req.session.user_id;
+  if (!userId) {
+    return res.status(401).send('Not authenticated');
+  }
+
+  try {
+    const user = await db.getUserById(userId);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error fetching user');
   }
 });
 
