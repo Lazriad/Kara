@@ -1,0 +1,190 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.user-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.match-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  text-align: left;
+}
+
+.match-card h3 {
+  margin-top: 0;
+}
+
+.match-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.chat {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.message-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.message.sent {
+  background-color: #007bff;
+  color: white;
+  text-align: right;
+}
+
+.message.received {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+.message-input {
+  display: flex;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.message-input button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.trending {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.trending ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.trending li {
+  margin: 5px 0;
+}
+
+.ad-banner {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.ad-banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.promoted-section {
+  margin: 40px 0;
+}
+
+.promoted-track-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.rooms-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.compatibility-card {
+  border: 2px solid #007bff;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.notifications {
+  position: relative;
+  display: inline-block;
+}
+
+.notification {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}

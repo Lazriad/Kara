@@ -1,0 +1,35 @@
+{
+  "name": "kara",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node backend/server.js",
+    "client": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lazriad/Kara.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lazriad/Kara/issues"
+  },
+  "homepage": "https://github.com/Lazriad/Kara#readme",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "express-session": "^1.18.0",
+    "sqlite3": "^5.1.6",
+    "stripe": "^14.21.0",
+    "ws": "^8.16.0"
+  }
+}
